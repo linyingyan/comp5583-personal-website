@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yang Linying — Personal Website</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar" aria-label="Primary navigation">
+    <a href="#home" class="nav-brand">Yang Linying</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">🌙</button>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="section hero">
+    <div class="container">
+      <h1>Yang Linying</h1>
+      <p class="headline">MSc student in Agentic AI Systems at The Hong Kong Polytechnic University (PolyU)</p>
+      <p class="intro">I build LLM-agent and AI applications that turn documents and source code into automated workflows — from OCR and knowledge extraction for ancient Chinese books to AI-generated product demo videos.</p>
+      <div class="hero-nav">
+        <a href="#about" class="btn">About</a>
+        <a href="#projects" class="btn">Projects</a>
+        <a href="#contact" class="btn">Contact</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About</h2>
+
+      <h3>Education</h3>
+      <div class="edu-item">
+        <h4>MSc in Agentic AI Systems</h4>
+        <p class="meta">The Hong Kong Polytechnic University (PolyU), Hong Kong · 2026 – present</p>
+        <p>Current courses: COMP5583 Agentic Computing, Systems, and Applications; COMP5584 LLM for Agents; COMP5423 Natural Language Processing; DSAI5205 Introduction to Artificial Intelligence; Computer Vision.</p>
+      </div>
+      <div class="edu-item">
+        <h4>BEng in Software Engineering</h4>
+        <p class="meta">South China University of Technology (SCUT), Guangzhou · Sep 2022 – Jun 2026</p>
+        <p>Main courses: machine learning, data structures, database systems, operating systems, computer networks, computer organisation, C++ programming, data mining.</p>
+      </div>
+
+      <h3>Interests</h3>
+      <ul class="interest-list">
+        <li>LLM agents: planning, reasoning, and tool use (MCP)</li>
+        <li>Agentic workflow automation (coding agents, agent skills)</li>
+        <li>Document AI: OCR, information extraction, knowledge graphs</li>
+        <li>Back-end engineering for AI applications</li>
+      </ul>
+
+      <h3>Skills</h3>
+      <ul class="skills-list">
+        <li><strong>Languages:</strong> Python, Java, C++, JavaScript</li>
+        <li><strong>Back end &amp; data:</strong> FastAPI, Spring Boot, SQLAlchemy, MySQL, SQLite, PostgreSQL, Redis, RabbitMQ</li>
+        <li><strong>AI:</strong> LangChain, LLM APIs, PaddleOCR, agent skills and MCP tools</li>
+        <li><strong>Front end:</strong> Vue 3, ECharts</li>
+      </ul>
+
+      <h3>Achievement</h3>
+      <p>
+        <strong>2024 CCF Big Data &amp; Computing Intelligence Contest (BDCI)</strong>, Oct–Nov 2024, natural-language-to-Cypher track:
+        fine-tuned a specified local model on the provided Cypher corpus (executable on TuGraph-DB) so that it translates
+        natural-language questions into graph-database queries. Final test score 83.8 (text similarity + syntax correctness);
+        ranked 17 of 60 teams in the preliminary round. Role: problem analysis, model tuning and code.
+      </p>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-grid">
+
+        <article class="project-card" data-label="BEng Graduation Project">
+          <span class="label label-coursework">Coursework / Graduation Project</span>
+          <h3>Ancient Chinese Book OCR &amp; Knowledge Extraction System</h3>
+          <p class="period">Mar – May 2026 · Role: full-stack developer (sole developer of architecture and core features)</p>
+          <p class="summary"><strong>Purpose:</strong> Make scanned ancient Chinese books searchable for digital-humanities and historical research.</p>
+          <p class="summary"><strong>Delivered capability:</strong> Ordered text from vertical, right-to-left pages, searchable knowledge graphs and cross-document event timelines linked to source evidence.</p>
+          <button class="expand-btn" aria-expanded="false">Show details ▾</button>
+          <div class="details" hidden>
+            <strong>My contributions:</strong>
+            <ul>
+              <li>I designed the system architecture and connected the full pipeline: upload document → OCR → LLM structured extraction → database → knowledge graph and spatio-temporal analysis.</li>
+              <li>I built an OCR module for images and multi-page PDFs using PyMuPDF to render PDF pages at high resolution and PaddleOCR to recognise text. I restored vertical reading order by grouping text boxes into columns by x-coordinate (right to left) and sorting each column top to bottom.</li>
+              <li>I built an LLM extraction pipeline for entities, knowledge triples, summaries, modern translations and spatio-temporal events; added long-text chunking, fallback JSON parsing and field de-duplication to make the output stable.</li>
+              <li>I built the knowledge-graph module (triples stored in the database, relation search, statistics, person-relationship network visualisation) and a spatio-temporal module that clusters events across documents into timelines with links back to the source evidence.</li>
+              <li>I added batch OCR and extraction, file-hash caching and per-record re-extraction.</li>
+            </ul>
+            <p class="tech"><strong>Tech:</strong> Python, FastAPI, Vue 3, PaddleOCR, PyMuPDF, SQLAlchemy, SQLite, ECharts, OpenAI-compatible LLM API.</p>
+            <p class="note"><strong>Evidence limit:</strong> Measured OCR and extraction accuracy are not supplied.</p>
+          </div>
+        </article>
+
+        <article class="project-card" data-label="Industry Project">
+          <span class="label label-industry">Industry</span>
+          <h3>AI Demo Video Automation Platform</h3>
+          <p class="period">2026</p>
+          <p class="summary"><strong>Purpose:</strong> Automate product demo videos for bid and tender submissions from requirement documents and source code.</p>
+          <p class="summary"><strong>Delivered capability:</strong> Browser recordings paced to generated narration, with human confirmation required for high-risk actions. Company and client names are withheld.</p>
+          <button class="expand-btn" aria-expanded="false">Show details ▾</button>
+          <div class="details" hidden>
+            <strong>My contributions:</strong>
+            <ul>
+              <li>I built an analysis skill that runs a coding agent (Codex) over requirement documents and source code and outputs a structured list of product features with menu locations and steps.</li>
+              <li>I implemented recording-plan generation with a rule-based high-risk-action scanner (e.g. delete or payment actions are forced to "high risk" and need human confirmation).</li>
+              <li>I built the recording pipeline using Playwright for browser control, ffmpeg for recording and merging video, and text-to-speech for narration. I generated narration first and used its duration to set the recording pace.</li>
+              <li>I built parts of the web workbench (Vue 3) and back end (Java / Spring Boot): recording queue, progress, pause/stop, retry and result review.</li>
+            </ul>
+            <p class="tech"><strong>Tech:</strong> Java 21, Spring Boot, Vue 3, PostgreSQL, Playwright, ffmpeg, Codex CLI.</p>
+            <p class="note"><strong>Evidence limit:</strong> Deployment, user numbers and measured time savings are not supplied.</p>
+          </div>
+        </article>
+
+        <article class="project-card" data-label="University Training Project">
+          <span class="label label-coursework">Coursework / University Training</span>
+          <h3>Enterprise AI Q&amp;A Platform with Agents and MCP</h3>
+          <p class="period">May – Jul 2025 · Role: core back-end developer</p>
+          <p class="summary"><strong>Purpose:</strong> Support enterprise information lookup and interaction through Q&amp;A, agents and MCP (Model Context Protocol) tools.</p>
+          <p class="summary"><strong>Delivered capability:</strong> Question-dependent tool calls, location lookup, route planning and domain knowledge answers for South China Sea research.</p>
+          <button class="expand-btn" aria-expanded="false">Show details ▾</button>
+          <div class="details" hidden>
+            <strong>My contributions:</strong>
+            <ul>
+              <li>I designed and implemented the agent's core back-end logic: user-intent recognition, conversation-context management and response-generation strategy.</li>
+              <li>I built agent-to-MCP-server scheduling and communication to select back-end tools, including the map service and knowledge base, according to the user's question.</li>
+              <li>I led the design and implementation of the MCP server interface that manages and schedules the back-end tool plug-ins.</li>
+              <li>I independently built the map-service module by wrapping the Amap (Gaode) API for location lookup and route planning.</li>
+              <li>I independently built a domain knowledge-base Q&amp;A module for South China Sea research, and integrated an LLM API (Qwen / DeepSeek-R1) for knowledge answers.</li>
+            </ul>
+            <p class="tech"><strong>Tech:</strong> Python, FastAPI, LangChain, Uvicorn, SQLite, RESTful APIs.</p>
+            <p class="note"><strong>Evidence limit:</strong> Measured answer accuracy is not supplied.</p>
+          </div>
+        </article>
+
+        <article class="project-card" data-label="Student Research Program">
+          <span class="label label-coursework">Coursework / Research Program</span>
+          <h3>Highly Cited Scientists Analysis</h3>
+          <p class="period">Mar 2024 – Mar 2025 · Role: data processing lead; second principal investigator</p>
+          <p class="summary"><strong>Purpose:</strong> Analyse highly cited scientists worldwide and highly cited papers from China's "985" universities (2009–2023) to support discipline evaluation and talent-recruitment decisions.</p>
+          <p class="summary"><strong>Outcome:</strong> CV lists with Chinese–English name mappings and positions for highly cited scientists at more than 30 universities in the 985 group, plus an institution-name standardisation mapping.</p>
+          <button class="expand-btn" aria-expanded="false">Show details ▾</button>
+          <div class="details" hidden>
+            <strong>My contributions:</strong>
+            <ul>
+              <li>I bulk-downloaded and organised Web of Science records of highly cited and hot papers from 985 universities, and merged and cross-checked the data from multiple universities.</li>
+              <li>I wrote Python scripts using openpyxl, regular expressions and multi-level filtering to standardise variant institution names, extract the home institution's authors, affiliations and corresponding authors, and detect country information.</li>
+              <li>I de-duplicated, merged and normalised the data into a structured dataset for discipline evaluation and research-collaboration analysis.</li>
+            </ul>
+            <p class="tech"><strong>Tech:</strong> Python, openpyxl, regular expressions, Web of Science / ESI / InCites.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>You can reach out via:</p>
+      <ul class="contact-list">
+        <li><strong>GitHub:</strong> <a href="https://github.com/linyingyan" target="_blank" rel="noopener noreferrer">github.com/linyingyan</a></li>
+        <li><strong>Email:</strong> Available on request — not published on this site.</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <p>&copy; 2026 Yang Linying.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
